@@ -4,12 +4,13 @@ import path from "path";
 
 export default defineConfig({
   plugins: [react()],
-  root: "client", // исходники фронта здесь
-  base: "/",      // абсолютные пути для ресурсов
+  root: "client",
+  base: "/", // Это критично для корректных путей на Vercel
   build: {
-    outDir: "../dist", // РЕЗУЛЬТАТ попадет в корень проекта в папку /dist
+    outDir: "../dist", // Собираем в корневую папку dist
     emptyOutDir: true,
     rollupOptions: {
+      // Указываем правильный путь к index.html от корня проекта
       input: path.resolve(__dirname, "client/index.html"),
     },
   },
