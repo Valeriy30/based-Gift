@@ -4,8 +4,10 @@
   "type": "module",
   "license": "MIT",
   "scripts": {
-  "build": "cd client && npm install && npm run build",
-  "install": "npm install && cd client && npm install"
+  "postinstall": "cd client && npm install",
+  "build": "cd client && npm run build",
+  "dev": "NODE_ENV=development tsx api/index.ts",
+  "check": "tsc"
 },
   "dependencies": {
     "@coinbase/cdp-sdk": "^1.44.0",
