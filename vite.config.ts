@@ -4,14 +4,11 @@ import path from "path";
 
 export default defineConfig({
   plugins: [react()],
-  root: "client",
-  base: "/", // Добавь эту строку
+  root: "client", // исходники фронта
+  base: "./",     // КРИТИЧНО: делает пути относительными (./assets/...)
   build: {
-    outDir: "../dist",
+    outDir: "../dist", // собираем в корень проекта
     emptyOutDir: true,
-    rollupOptions: {
-      input: path.resolve(__dirname, "client/index.html"), // Явно указываем входной файл
-    },
   },
   resolve: {
     alias: {
