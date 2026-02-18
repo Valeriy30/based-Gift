@@ -40,7 +40,7 @@ export default defineConfig({
       "@shared": path.resolve(import.meta.dirname, "shared"),
     },
   },
-  root: path.resolve(import.meta.dirname, "client"),
+  root: "./client",
   build: {
     outDir: "dist",
   emptyOutDir: true,
